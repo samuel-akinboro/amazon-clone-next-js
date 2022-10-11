@@ -45,6 +45,21 @@ function Header() {
       </div>
 
       {/* Sub Header */}
+      <div className='flex items-center text-white bg-amazon_blue-light space-x-4 p-2'>
+        <p className='flex link items-center text-sm'>
+          <Bars3Icon className='h-6 mr-1' />
+          All
+        </p>
+        <p className='link text-sm'>Prime Video</p>
+        <p className='link text-sm'>Amazon Business</p>
+        <p className='link text-sm'>Today's Deals</p>
+        <p className='link hidden lg:inline-flex text-sm'>Electronics</p>
+        <p className='link hidden lg:inline-flex text-sm'>Food & Grocery</p>
+        <p className='link hidden lg:inline-flex text-sm'>Prime</p>
+        <p className='link hidden lg:inline-flex text-sm'>Buy Again</p>
+        <p className='link hidden lg:inline-flex text-sm'>Shopper Toolkit</p>
+        <p className='link hidden lg:inline-flex text-sm'>Health & Personal Care</p>
+      </div>
     </header>
   )
 }
