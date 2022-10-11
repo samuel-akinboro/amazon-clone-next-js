@@ -21,9 +21,9 @@ function Header() {
         </div>
 
         {/* Search */}
-        <div className='hidden h-10 sm:flex items-center flex-grow bg-yellow-400 rounded-md cursor-pointer'>
-          <input type="text" className='rounded-l-md p-2 w-6 flex-grow flex-shrink focus:outline-none' />
-          <MagnifyingGlassIcon className='h-12 p-4' />
+        <div className='hidden h-10 sm:flex items-center flex-grow bg-yellow-500 hover:bg-yellow-600 rounded cursor-pointer'>
+          <input type="text" className='rounded-l p-2 w-6 flex-grow flex-shrink focus:outline-none' />
+          <MagnifyingGlassIcon className='h-14 p-4 px-3' />
         </div>
 
         {/* Right */}
