@@ -11,7 +11,7 @@ function Header() {
       {/* Main Header */}
       <div className='flex items-center bg-amazon_blue flex-grow p-1 py-2'>
         {/* Logo */}
-        <div className='mt-2 flex items-center flex-grow sm:flex-grow-0'>
+        <div className='mt-2 flex items-center flex-grow sm:flex-grow-0 link'>
           <Image 
             src='https://links.papareact.com/f90'
             width={150}
@@ -45,7 +45,7 @@ function Header() {
       </div>
 
       {/* Sub Header */}
-      <div className='flex items-center text-white bg-amazon_blue-light space-x-4 p-2'>
+      <div className='flex items-center text-white bg-amazon_blue-light space-x-4 p-2 pl-5'>
         <p className='flex link items-center text-sm'>
           <Bars3Icon className='h-6 mr-1' />
           All

@@ -31,13 +31,13 @@ function Banner () {
         renderArrowNext={(clickHandler, hasNext, label) => <ArrowNext clickHandler={clickHandler} hasNext={hasNext} label={label} />}
       >
         <div>
-          <img src='/assets/images/bannerone.jpg' alt="" />
+          <img loading='lazy' src='/assets/images/bannerone.jpg' alt="" />
         </div>
         <div>
-          <img src='/assets/images/banner2.jpg' alt="" />
+          <img loading='lazy' src='/assets/images/banner2.jpg' alt="" />
         </div>
         <div>
-          <img src='/assets/images/banner3.jpg' alt="" />
+          <img loading='lazy' src='/assets/images/banner3.jpg' alt="" />
         </div>
       </Carousel>
     </div>
