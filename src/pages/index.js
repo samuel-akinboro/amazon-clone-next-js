@@ -11,9 +11,9 @@ export default function Home({ products }) {
       </Head>
       <Header />
 
-      <main className='max-w-screen-xl mx-auto'>
+      <main className='max-w-screen-2xl mx-auto'>
         <Banner />
-        <ProductFeed products={products.reverse()} />
+        <ProductFeed products={products} />
       </main>
     </div>
   );
