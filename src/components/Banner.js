@@ -40,6 +40,7 @@ function Banner () {
           <img loading='lazy' src='/assets/images/banner3.jpg' alt="" />
         </div>
       </Carousel>
+      <div className='absolute bg-gradient-to-t from-gray-100 to-transparent h-32 bottom-0 z-20 w-full'></div>
     </div>
   )
 }
