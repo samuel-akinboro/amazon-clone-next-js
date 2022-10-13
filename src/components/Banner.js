@@ -8,13 +8,13 @@ import {
 function Banner () {
   const ArrowPrev = ({clickHandler, hasPrev, label}) => (
     <div className='absolute z-10 h-full flex items-center w-20 cursor-pointer justify-center' onClick={clickHandler}>
-      <ChevronLeftIcon className='h-10 mt-[-100px]' />
+      <ChevronLeftIcon className='h-10 lg:h-12 mt-[-100px] xl:-mt-60' />
     </div>
   );
 
   const ArrowNext = ({clickHandler, hasNext, label}) => (
     <div className='absolute right-0 h-full flex items-center w-20 cursor-pointer top-0 justify-center' onClick={clickHandler}>
-      <ChevronRightIcon className='h-10 mt-[-100px]' />
+      <ChevronRightIcon className='h-10 lg:h-12 mt-[-100px] xl:-mt-60' />
     </div>
   );
   
