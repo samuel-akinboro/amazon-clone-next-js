@@ -5,9 +5,11 @@ import {
   ShoppingCartIcon
 } from '@heroicons/react/24/outline'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 function Header() {
   const {data: session} = useSession();
+  const router = useRouter();
 
   return (
     <header>
@@ -20,6 +22,7 @@ function Header() {
             width={150}
             height={40}
             objectFit='contain'
+            onClick={() => router.push('/')}
           />
         </div>
 
@@ -41,8 +44,8 @@ function Header() {
             <p>Returns</p>
             <p className='font-bold md:text-sm'>& orders</p>
           </div>
-          <div className='flex items-end link relative'>
-            <div className='text-yellow-600 absolute top-[-7px] font-bold md:text-lg right-[-4px] md:right-auto md:left-10'>1</div>
+          <div className='flex items-end link relative' onClick={() => router.push('/checkout')}>
+            <div className='text-yellow-600 absolute top-[-7px] font-bold md:text-lg right-[-4px] md:right-auto md:left-10'>0</div>
             <ShoppingCartIcon className='h-8 ' />
             <p className='hidden md:inline font-bold md:text-sm'>Cart</p>
           </div>
