@@ -31,7 +31,7 @@ function Header() {
 
         {/* Right */}
         <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
-          <div className='link' onClick={signIn}>
+          <div className='link' onClick={!session ? signIn : signOut}>
             <p className='max-w-[144px] truncate'>
               { session ? `Hello, ${session.user.name}` : 'Hello, sign in'}
             </p>
