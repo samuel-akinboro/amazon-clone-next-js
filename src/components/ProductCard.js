@@ -2,8 +2,26 @@ import Image from 'next/image'
 import { StarIcon } from '@heroicons/react/24/outline'
 import { StarIcon as SolidStarIcon } from '@heroicons/react/24/solid'
 import CurrencyFormat from 'react-currency-format'
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice'
 
 function ProductCard({id, title, price, category, image, description, rating}) {
+  const dispatch = useDispatch();
+
+  const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      category,
+      image,
+      description,
+      rating
+    };
+    
+    dispatch(addToBasket(product));
+  }
+
   return (
     <div className='relative flex flex-col m-5 bg-white z-30 p-8 px-5 pb-5'>
       <p className='absolute top-2 right-2 text-xs italic text-gray-400'>{category}</p>
@@ -38,7 +56,7 @@ function ProductCard({id, title, price, category, image, description, rating}) {
           thousandSeparator={true}
         />
       </p>
-      <button className='mt-auto button'>Add to cart</button>
+      <button className='mt-auto button' onClick={addItemToBasket}>Add to cart</button>
     </div>
   )
 };

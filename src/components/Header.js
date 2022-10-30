@@ -6,10 +6,13 @@ import {
 } from '@heroicons/react/24/outline'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux';
+import { selectItems } from '../slices/basketSlice';
 
 function Header() {
   const {data: session} = useSession();
   const router = useRouter();
+  const cartItems = useSelector(selectItems)
 
   return (
     <header>
@@ -45,7 +48,7 @@ function Header() {
             <p className='font-bold md:text-sm'>& orders</p>
           </div>
           <div className='flex items-end link relative' onClick={() => router.push('/checkout')}>
-            <div className='text-yellow-600 absolute top-[-7px] font-bold md:text-lg right-[-4px] md:right-auto md:left-10'>0</div>
+            <div className='text-yellow-600 absolute top-[-7px] font-bold md:text-lg right-[-4px] md:right-auto md:left-10'>{cartItems?.length}</div>
             <ShoppingCartIcon className='h-8 ' />
             <p className='hidden md:inline font-bold md:text-sm'>Cart</p>
           </div>
