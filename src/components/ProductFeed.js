@@ -15,6 +15,7 @@ function ProductFeed({products}) {
         }) => (
           <ProductCard 
             key={id} 
+            id={id}
             title={title}
             price={price}
             image={image}

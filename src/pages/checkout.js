@@ -28,7 +28,7 @@ function checkout(){
             {
               items.map((item, i) => (
                 <CheckoutItemCard
-                  key={item.id}
+                  key={item.id + "" + i}
                   id={item.id}
                   title={item.title}
                   price={item.price}

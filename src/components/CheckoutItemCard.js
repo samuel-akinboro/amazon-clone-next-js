@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { StarIcon } from '@heroicons/react/24/outline'
 import { StarIcon as SolidStarIcon } from '@heroicons/react/24/solid'
 import CurrencyFormat from 'react-currency-format'
+import { removeFromBasket } from '../slices/basketSlice';
+import { useDispatch } from 'react-redux';
 
 function CheckoutItemCard ({
   id, 
@@ -12,6 +14,12 @@ function CheckoutItemCard ({
   description, 
   rating
 }) {
+  const dispatch = useDispatch();
+
+  const handleRemoveFromBasket = () => {
+    dispatch(removeFromBasket({ id }))
+  }
+
   return (
     <div className='grid grid-cols-5'>
       {/* left */}
@@ -29,11 +37,11 @@ function CheckoutItemCard ({
           <div className='flex items-center space-x-1'>
             {Array(Math.floor(rating.rate))
               .fill()
-              .map((_, i) => (<SolidStarIcon className='h-5 text-yellow-200' />))
+              .map((_, i) => (<SolidStarIcon key={i} className='h-5 text-yellow-200' />))
             }
             {Array(5 - Math.floor(rating.rate))
               .fill()
-              .map((_, i) => (<StarIcon className='h-5 text-yellow-200' />))
+              .map((_, i) => (<StarIcon key={i} className='h-5 text-yellow-200' />))
             }
           </div>
           <p>({rating.count})</p>
@@ -52,7 +60,7 @@ function CheckoutItemCard ({
       {/* Right */}
       <div className="flex flex-col space-y-2 justify-self-end my-auto">
         <button className="button px-8">Add to Cart</button>
-        <button className="button px-8">Remove</button>
+        <button className="button px-8" onClick={handleRemoveFromBasket}>Remove</button>
       </div>
     </div>
   )
