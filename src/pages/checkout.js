@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { useSelector } from "react-redux"
+import CheckoutItemCard from "../components/CheckoutItemCard";
 import Header from "../components/Header"
 import { selectItems } from "../slices/basketSlice"
 
@@ -20,7 +21,24 @@ function checkout(){
             />
           </div>
           <div className="flex flex-col space-y-10 bg-white p-5">
-            <h1 className='text-3xl border-b pb-4'>{items.length === 0 ? 'Your Amazon Cart is Empty' : 'Shopping Cart'}</h1>
+            <h1 className='text-3xl border-b pb-4'>
+              {items.length === 0 ? 'Your Amazon Cart is Empty' : 'Shopping Cart'}
+            </h1>
+
+            {
+              items.map((item, i) => (
+                <CheckoutItemCard
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  price={item.price}
+                  category={item.category}
+                  image={item.image}
+                  description={item.description}
+                  rating={item.rating}
+                />
+              ))
+            }
           </div>
         </div>
         {/* side column */}
