@@ -59,7 +59,10 @@ function checkout(){
                   /> */}
                 </span>
               </h2>
-              <button className={`button mt-2 ${!session && 'bg-gradient-to-b from-gray-300 to-gray-500 text-gray-300 cursor-not-allowed'}`}>
+              <button 
+                disabled={!session}
+                className={`button mt-2 ${!session && 'bg-gradient-to-b from-gray-300 to-gray-500 text-gray-300 cursor-not-allowed'}`}
+              >
                 {!session ? 'Sign in to checkout' : 'Proceed to checkout'}
               </button>
             </>
