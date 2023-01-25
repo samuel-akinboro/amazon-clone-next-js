@@ -2,13 +2,14 @@ import Image from "next/image"
 import { useSelector } from "react-redux"
 import CheckoutItemCard from "../components/CheckoutItemCard";
 import Header from "../components/Header"
-import { selectItems } from "../slices/basketSlice"
+import { selectItems, selectTotal } from "../slices/basketSlice"
 import CurrencyFormat from "react-currency-format";
 import { useSession } from "next-auth/react";
 
 function checkout(){
   const {data: session} = useSession();
   const items = useSelector(selectItems);
+  const total = useSelector(selectTotal);
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -46,17 +47,17 @@ function checkout(){
         </div>
         {/* side column */}
         {items.length > 0 && (
-          <div>
+          <div className='p-10 bg-white shadow-md flex flex-col'>
             <>
               <h2 className='whitespace-nowrap'>
-                Subtotal ({items.length} items):
+                Subtotal ({items.length} items):{' '}
                 <span className='font-bold'>
-                  {/* <CurrencyFormat 
-                    value={price}
+                  <CurrencyFormat 
+                    value={total}
                     prefix={'$'}
                     displayType={'text'}
                     thousandSeparator={true}
-                  /> */}
+                  />
                 </span>
               </h2>
               <button 
